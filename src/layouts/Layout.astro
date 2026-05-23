@@ -1,0 +1,484 @@
+---
+import KeepScrolling from "@/assets/keep-scrolling.svg"
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/rcs.png" />
+    <title>GTA VI</title>
+  </head>
+
+  <body>
+
+    <slot />
+    <KeepScrolling
+      class="fixed bottom-3 right-0 left-0 mx-auto text-pink-300 drop-shadow-2xl animate-bounce-pulse"/>
+  </body>
+</html>
+
+
+<style is:global>
+  @import "tailwindcss";
+
+  @theme {
+    --font-sans: "GTA", system-ui, sans-serif;
+    --font-narrow: "GTANarrow", system-ui, sans-serif;
+    --animate-bounce-pulse: bounce-pulse 2s ease-in-out infinite;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+    height: 300vh;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    color: white;
+    margin: 0;
+    width: 100%;
+  }
+
+/*logo mask*/
+  #logo-mask {
+    background: #ff75c3;
+    background: -webkit-linear-gradient(to right, #cd93ff, #70e2ff, #9fff5b, #ffe83f, #ffa647, #ff75c3);
+    background: linear-gradient(to right, #cd93ff, #70e2ff, #9fff5b, #ffe83f, #ffa647, #ff75c3);
+
+    mask-image: url("/logo-stack.svg");
+    mask-position: center 50%;
+    mask-repeat: no-repeat;
+    mask-size: clamp(5000vh, 3500%, 0vh);
+  }
+  #full-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 80%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 50;
+}
+/*main*/
+main {
+  opacity: 0;
+  transform: translateY(60px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 25px;
+}
+/*texto superior*/
+main h2 {
+  font-size: 100px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #cd93ff, #70e2ff, #9fff5b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.9;
+}
+/*fecha*/ 
+main h1 {
+  font-size: 90px;
+  font-weight: 900;
+  background: linear-gradient(
+    90deg,
+    #00e0ff,
+    #9b00ff,
+    #ff0055
+  );
+  background-size: 250%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 4s linear infinite;
+  filter: brightness(1.3) contrast(1.2);
+  text-shadow:none;
+}
+/* animaciones */
+@keyframes gradientMove {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+/*contenedor*/
+#countdown {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+}
+/*bloques*/
+#countdown div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 26px;
+  border-radius: 16px;
+  min-width: 100px;
+  transition: all 0.3s ease;
+}
+
+/*hover*/
+#countdown div:hover {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow:
+    0 0 40px rgba(255,0,102,0.6),
+    0 0 80px rgba(0,195,255,0.5);
+}
+
+/*numeros*/
+#countdown span {
+  font-size: 44px;
+  font-weight: 900;
+  background: linear-gradient(to right, #00e0ff, #9b00ff, #ff0055);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: saturate(1.2);
+}
+#countdown small {
+  margin-top: 6px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+#countdown div {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0% {
+    box-shadow:
+      0 0 20px rgba(0,195,255,0.2),
+      0 0 40px rgba(122,0,255,0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 40px rgba(255,0,102,0.4),
+      0 0 80px rgba(0,195,255,0.3);
+  }
+  100% {
+    box-shadow:
+      0 0 20px rgba(0,195,255,0.2),
+      0 0 40px rgba(122,0,255,0.1);
+  }
+}
+
+  /*imagenes de plataformas*/
+.platforms img {
+  width: 200px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: none;
+  transition: 0.3s ease;
+}
+.platforms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  margin-top: 50px;
+  padding: 20px 0;
+.characters-section {
+  padding: 200px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+}
+/*titulos*/
+.section-title {
+  font-size: 80px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+.character-block {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+.character-block.reverse {
+  flex-direction: row-reverse;
+}
+.character-block img {
+  width: 50%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 30px;
+  filter: contrast(1.1) saturate(1.2);
+}
+.character-info {
+  width: 50%;
+}
+.character-info h3 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.character-info p {
+  font-size: 22px;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+  /*boton de musica*/
+}
+.music-btn {
+  background: rgba(91, 92, 95, 0.8);
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 60;
+  backdrop-filter: blur(10px);
+  color: black;
+  padding: 15px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+  /*texto del trailer*/
+  .trailer-text {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  }
+  /*ANIMACIÓN*/
+  @keyframes bounce-pulse {
+    0% { transform: translateY(0); scale: 0.8; opacity: 0.8; }
+    50% { transform: translateY(-5px); opacity: 1; scale: 1; }
+    100% { transform: translateY(0); scale: 0.8; opacity: 0.8; }
+  }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("/img1.webp") center/cover no-repeat;
+  opacity: 0.25;
+  z-index: -1;
+}
+
+/* informacion-*/
+.info-section {
+  margin-top: 120px;
+  max-width: 900px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  opacity: 0.95;
+}
+
+  /*contenedor principal*/
+#info {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+/*BLOQUES*/
+.info-block {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* invertir */
+.info-block.reverse {
+  flex-direction: row-reverse;
+}
+
+/* IMAGEN*/
+.info-img {
+  width: 50%;
+  height: 80vh;
+  overflow: hidden;
+
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+
+.info-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border-radius: 30px;
+  transform: scale(1.1);
+  filter: contrast(1.1) saturate(1.2);
+  transition: 0.5s;
+}
+/* efecto img*/
+.info-img img:hover {
+  transform: scale(1.05);
+}
+/*texto*/
+.info-text {
+  width: 50%;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;   
+  align-items: center;       
+  text-align: center;        
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow:
+    0 0 40px rgba(51,0,252,0.2),
+    0 0 60px rgba(235,0,0,0.15);
+}
+/* título*/
+.info-text h2 {
+  font-size: 64px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  background: linear-gradient(to right, #3300FC, #95008A, #EB0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+/* párrafo */
+.info-text p {
+  font-size: 30px; 
+  line-height: 1.9;
+  max-width: 800px;
+  text-align: center;
+  background: linear-gradient(to right, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+}
+.info-text p::first-line {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+  /*juegos anteriores*/
+#games {
+  margin-top: 200px;
+  padding: 0 40px;
+}
+/* header */
+.games-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.games-header h2 {
+  font-size: 64px;
+  letter-spacing: 6px;
+  background: linear-gradient(
+    90deg,
+    #3300FC,
+    #95008A,
+    #EB0000,
+    #3300FC
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s linear infinite;
+}
+/* animación */
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 300%;
+  }
+}
+.games-header p {
+  font-size: 22px;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: auto;
+}
+/* fila horizontal de los juegos*/
+.games-row {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+}
+.games-row::-webkit-scrollbar {
+  display: none;
+}
+/* tarjeta de los juegos anteriores*/
+.game-card {
+  min-width: 280px;
+  height: 420px;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: 0.4s;
+}
+
+/* imagenes juegos */
+.game-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+/* overlay */
+.game-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+.game-info h3 {
+  font-size: 22px;
+}
+.game-info span {
+  font-size: 14px;
+  opacity: 0.7;
+}
+/* hover */
+.game-card:hover {
+  transform: scale(1.08);
+}
+.game-card:hover img {
+  transform: scale(1.1);
+}
+#games {
+  margin-bottom: 200px; 
+}
+.legal-footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  opacity: 0.2;
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.video-block video {
+  object-fit: cover;
+}
+/* enfoque para el videooo*/
+.video-block video.pos-top {
+  object-position: top;
+}
+/* equilibrar elencuadre  */
+.video-block video.pos-center {
+  object-position: center;
+}
+.video-block video.pos-bottom {
+  object-position: bottom;
+}
+</style>

@@ -1,0 +1,688 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import HeroKeyLogo from "@/assets/hero-key-logo.webp"
+import HeroKeyBackground from "@/assets/hero-key-background.webp"
+import LogoVI from "@/assets/logo-vi.svg"
+import PlayButtonIcon from "@/assets/play-button.svg"
+import LogoCutted from "@/assets/logo-cutted.svg"
+import FullLogo from "@/assets/full-logo.webp"
+import BgImage from "@/assets/img1.webp"
+
+//musica
+import musicaSrc from "@/music/queenofhearts.mp3"
+// personajes
+
+// Boobie Ike
+import Boobie1 from "@/assets/Boobie_Ike_01.webp"
+import Boobie2 from "@/assets/Boobie_Ike_02.webp"
+import Boobie3 from "@/assets/Boobie_Ike_03.webp"
+import Boobie4 from "@/assets/Boobie_Ike_04.webp"
+
+// Brian Heder
+import Brian1 from "@/assets/Brian_Heder_01.webp"
+import Brian3 from "@/assets/Brian_Heder_03.webp"
+
+// Cal Hampton
+import Cal1 from "@/assets/Cal_Hampton_01.webp"
+import Cal2 from "@/assets/Cal_Hampton_02.webp"
+import Cal3 from "@/assets/Cal_Hampton_03.webp"
+import Cal4 from "@/assets/Cal_Hampton_04.webp"
+
+// DreQuan Priest
+import Dre1 from "@/assets/DreQuan_Priest_01.webp"
+import Dre2 from "@/assets/DreQuan_Priest_02.webp"
+import Dre3 from "@/assets/DreQuan_Priest_03.webp"
+
+// Jason Duval
+import Jason1 from "@/assets/Jason_Duval_01.webp"
+import Jason2 from "@/assets/Jason_Duval_02.webp"
+import Jason3 from "@/assets/Jason_Duval_03.webp"
+import Jason4 from "@/assets/Jason_Duval_04.webp"
+import Jason5 from "@/assets/Jason_Duval_05.webp"
+import Jason6 from "@/assets/Jason_Duval_06.webp"
+
+// Lucia Caminos
+import Lucia1 from "@/assets/Lucia_Caminos_01.webp"
+import Lucia2 from "@/assets/Lucia_Caminos_02.webp"
+import Lucia3 from "@/assets/Lucia_Caminos_03.webp"
+import Lucia4 from "@/assets/Lucia_Caminos_04.webp"
+import Lucia5 from "@/assets/Lucia_Caminos_05.webp"
+import Lucia6 from "@/assets/Lucia_Caminos_06.webp"
+
+// Raul Bautista
+import Raul1 from "@/assets/Raul_Bautista_01.webp"
+import Raul2 from "@/assets/Raul_Bautista_02.webp"
+import Raul3 from "@/assets/Raul_Bautista_03.webp"
+import Raul4 from "@/assets/Raul_Bautista_04.webp"
+
+// Real Dimez
+import Dimez1 from "@/assets/Real_Dimez_01.webp"
+import Dimez2 from "@/assets/Real_Dimez_02.webp"
+import Dimez3 from "@/assets/Real_Dimez_03.webp"
+import Dimez4 from "@/assets/Real_Dimez_04.webp"
+
+//consolas
+import PS5 from "@/assets/ps5.svg"
+import Xbox from "@/assets/xbox.svg"
+
+//videos
+import V_Jason from "@/assets/Jason_Duval_Video_Clip.mp4"
+import V_Boobie from "@/assets/Boobie_Ike_Video_Clip.mp4"
+import V_Brian from "@/assets/Brian_Heder_Video_Clip.mp4"
+import V_Cal from "@/assets/Cal_Hampton_Video_Clip.mp4"
+import V_Dre from "@/assets/DreQuan_Priest_Video_Clip.mp4"
+import V_Jason from "@/assets/Jason_Duval_Video_Clip.mp4"
+import V_Lucia from "@/assets/Lucia_Caminos_Video_Clip.mp4"
+import V_Raul from "@/assets/Raul_Bautista_Video_Clip.mp4"
+import V_Dimez from "@/assets/Real_Dimez_Video_Clip.mp4"
+
+//JUEGOS GTA
+import GTA3 from "@/assets/gta3.jpg"
+import GTA4 from "@/assets/gta4.jpg"
+import GTA5 from "@/assets/gta5.jpg"
+import GTASA from "@/assets/gtasa.webp"
+import GTAVC from "@/assets/gtavc.webp"
+
+---
+
+<Layout>
+
+  <!-- audio -->
+  <audio id="musica" src="/musica/musica.mp3"></audio>
+  <!-- boton de música -->
+  <button id="btn-musica" class="music-btn">🔇</button>
+
+  <!-- HERO -->
+  <div id="logo-mask" class="fixed top-0 w-full h-screen">
+    <section>
+      <picture id="hero-key" class="h-screen scale-125 block overflow-hidden fixed">
+        <img id="hero-key-logo" src={HeroKeyLogo.src} class="absolute w-full h-full object-cover" />
+        <img id="hero-key-background" src={HeroKeyBackground.src} class="w-full h-full object-cover" />
+       
+      </picture>
+    </section>
+  </div>
+
+  <img id="full-logo" src={FullLogo.src} />
+
+  <div class="relative flex flex-col items-center justify-between h-screen px-20 py-16 w-full">
+    <header class="flex justify-between w-full">
+      <LogoVI class="size-11 text-white hover:text-yellow-100 transition cursor-pointer" />
+    </header>
+
+    <!-- BOTÓN TRAILER -->
+    <button id="btn-trailer" class="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer">
+      <PlayButtonIcon
+        id="hero-play-button"
+        class="text-white size-32 backdrop-blur-3xl rounded-full hover:scale-110 transition"
+      />
+    </button>
+
+    <!-- FOOTER -->
+    <footer id="hero-footer" class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+      <LogoCutted class="text-white w-40 drop-shadow-[0_0_12px_#000]" />
+
+      <span class="relative -top-24 uppercase tracking-[10px] text-center text-lg text-white opacity-90 trailer-text">
+  Ver el Tráiler 2
+</span>
+    </footer>
+
+  </div>
+
+  <!-- VIDEO en modal  -->
+  <div id="videoModal" class="fixed inset-0 bg-black/80 hidden flex items-center justify-center z-[999]">
+    <div class="relative w-[95%] max-w-6xl">
+      
+      <button onclick="closeModal()" class="absolute -top-12 right-0 text-white text-3xl">
+        ✕
+      </button>
+
+        <iframe
+       id="videoFrame"
+        class="w-full aspect-video rounded-xl"
+      src="https://www.youtube.com/embed/QiIebY4wmWg"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+      allowfullscreen>
+        </iframe>
+
+    </div>
+  </div>
+
+  <!-- CONTENIDO -->
+<main class="relative z-10 mt-[100vh] flex flex-col items-center justify-center text-center gap-6">
+
+  <h2 class="text-4xl tracking-[5px] uppercase">
+    Disponible
+  </h2>
+  <h1 class="text-5xl font-bold">
+    19 de noviembre de 2026
+  </h1>
+<div id="hero-stats" class="flex flex-col items-center gap-10 mt-10">
+  <!-- contador -->
+  <div id="countdown" class="flex gap-6 text-2xl">
+    <div><span id="days">0</span><br/>Días</div>
+    <div><span id="hours">0</span><br/>Horas</div>
+    <div><span id="minutes">0</span><br/>Min</div>
+    <div><span id="seconds">0</span><br/>Seg</div>
+  </div>
+
+  <!-- plataformas -->
+  <div class="platforms flex gap-10 items-center">
+    <img src={PS5.src} alt="PlayStation" />
+    <img src={Xbox.src} alt="Xbox" />
+  </div>
+
+</div>
+ <!--información sobre el juego -->
+<section id="info">
+  <!-- BLOQUE 1 -->
+  <div class="info-block">
+    <div class="info-img">
+      <img src={BgImage.src} />
+    </div>
+    <div class="info-text">
+      <h2>¿Qué es GTA VI?</h2>
+      <p>
+        Grand Theft Auto VI redefine el concepto de mundo abierto al ofrecer una
+        experiencia donde cada elemento del entorno tiene propósito. Rockstar
+        construye un universo dinámico en el que las decisiones del jugador no
+        solo afectan la historia, sino también el comportamiento de la ciudad,
+        sus habitantes y el equilibrio del poder dentro de Leonida.
+      </p>
+    </div>
+  </div>
+
+  <!-- BLOQUE 2 -->
+  <div class="info-block reverse">
+    <div class="info-img">
+      <img src={Jason5.src} />
+    </div>
+    <div class="info-text">
+      <h2>Un hito de la década</h2>
+      <p>
+        GTA VI no es solo un lanzamiento importante, es un punto de inflexión en
+        la industria. Su desarrollo, ambición técnica y escala narrativa lo
+        posicionan como una obra que redefine expectativas y establece un nuevo
+        estándar en cuanto a inmersión, realismo y libertad.
+      </p>
+    </div>
+  </div>
+
+  <!-- Jason -->
+  <div class="info-block">
+    <div class="info-img">
+      <img src={Jason1.src} />
+    </div>
+
+    <div class="info-text">
+      <h2>Jason Duval</h2>
+      <p>
+        Jason Duval es un hombre atrapado entre su pasado y su intento de redención.
+        Su formación militar le dio disciplina y habilidades, pero también lo dejó
+        marcado por la violencia. En Leonida, intenta construir algo distinto,
+        aunque cada decisión lo acerca nuevamente al conflicto, recordándole que
+        escapar de uno mismo es muchas veces imposible.
+      </p>
+    </div>
+  </div>
+
+  <div class="video-block">
+  <video autoplay muted playsinline preload="auto">
+    <source src="/videos/Jason_Duval_Video_Clip.mp4" type="video/mp4" />
+  </video>
+</div> 
+
+  <!-- Lucia -->
+  <div class="info-block reverse">
+    <div class="info-img">
+      <img src={Lucia3.src} />
+    </div>
+
+    <div class="info-text">
+      <h2>Lucia Caminos</h2>
+      <p>
+        Lucia Caminos ha aprendido a sobrevivir en un sistema que nunca jugó a su favor.
+        Su paso por prisión no fue una derrota, sino una transformación. Ahora es
+        más fuerte, más fría y mucho más calculadora. Su objetivo no es solo
+        sobrevivir, sino dominar el entorno que alguna vez la controló.
+      </p>
+    </div>
+  </div>
+
+  <div class="video-block">
+  <video autoplay muted playsinline preload="auto">
+    <source src="/videos/Lucia_Caminos_Video_Clip.mp4" type="video/mp4" />
+  </video>
+</div>
+  
+  <!-- Raul -->
+  <div class="info-block">
+    <div class="info-img">
+      <img src={Raul2.src} />
+    </div>
+
+    <div class="info-text">
+      <h2>Raul Bautista</h2>
+      <p>
+        Raul Bautista es un especialista en operaciones de alto riesgo, conocido
+        por su precisión y su capacidad de mantener la calma bajo presión. Cada
+        golpe que ejecuta está cuidadosamente planeado, pero incluso él sabe que
+        en Leonida el caos puede romper cualquier estrategia en cuestión de segundos.
+      </p>
+    </div>
+  </div>
+
+  <div class="video-block">
+  <video autoplay muted playsinline preload="auto">
+    <source src="/videos/Raul_Bautista_Video_Clip.mp4" type="video/mp4" />
+  </video>
+</div>
+
+  <!-- Boobie -->
+  <div class="info-block reverse">
+    <div class="info-img">
+      <img src={Boobie4.src} />
+    </div>
+
+    <div class="info-text">
+      <h2>Boobie Ike</h2>
+      <p>
+        Boobie Ike representa el éxito nacido desde la calle. Su imperio se basa
+        tanto en negocios visibles como en operaciones ocultas que sostienen su
+        poder. Carismático y peligroso, entiende perfectamente que en Vice City
+        el dinero es solo una parte del juego: el verdadero poder está en el control.
+      </p>
+    </div>
+  </div>
+<div class="video-block">
+  <video autoplay muted playsinline preload="auto">
+    <source src="/videos/Boobie_Ike_Video_Clip.mp4" type="video/mp4" />
+  </video>
+</div>
+
+  <!-- DreQuan -->
+  <div class="info-block">
+    <div class="info-img">
+      <img src={Dre3.src} />
+    </div>
+
+    <div class="info-text">
+      <h2>DreQuan Priest</h2>
+      <p>
+        DreQuan Priest es un estratega que utiliza la música como fachada para
+        expandir su influencia. Su visión va más allá del entretenimiento,
+        moviéndose en un terreno donde la fama, el dinero y el poder se cruzan,
+        convirtiéndolo en una figura clave dentro del ecosistema de Vice City.
+      </p>
+    </div>
+  </div>
+<div class="video-block">
+  <video autoplay muted playsinline preload="auto">
+    <source src="/videos/DreQuan_Priest_Video_Clip.mp4" type="video/mp4" />
+  </video>
+</div>
+
+  <!-- Real Dimez -->
+  <div class="info-block reverse">
+    <div class="info-img">
+      <img src={Dimez4.src} />
+    </div>
+
+    <div class="info-text">
+      <h2>Real Dimez</h2>
+      <p>
+        Real Dimez es la representación de una generación impulsada por la
+        visibilidad digital y la cultura viral. Su estilo de vida extremo y su
+        presencia constante en redes los convierten en figuras influyentes,
+        pero también impredecibles dentro de un entorno donde todo puede escalar rápidamente.
+      </p>
+    </div>
+  </div>
+  <div class="video-block">
+  <video autoplay muted playsinline preload="auto">
+    <source src="/videos/Real_Dimez_Video_Clip.mp4" type="video/mp4" />
+  </video>
+</div>
+
+
+  <!-- Cal -->
+  <div class="info-block">
+    <div class="info-img">
+      <img src={Cal4.src} />
+    </div>
+
+    <div class="info-text">
+      <h2>Cal Hampton</h2>
+      <p>
+        Cal Hampton vive rodeado de teorías y sospechas. Su obsesión con lo oculto
+        lo lleva a cuestionarlo todo, desde el gobierno hasta las estructuras de
+        poder dentro de la ciudad. Aunque muchos lo consideran paranoico, su
+        perspectiva revela patrones que otros simplemente no logran ver.
+      </p>
+    </div>
+  </div>
+
+ <div class="video-block">
+  <video autoplay muted playsinline preload="auto">
+    <source src="/videos/Cal_Hampton_Video_Clip.mp4" type="video/mp4" />
+  </video>
+</div>
+
+  <!-- Brian -->
+  <div class="info-block reverse">
+    <div class="info-img">
+      <img src={Brian3.src} />
+    </div>
+
+    <div class="info-text">
+      <h2>Brian Heder</h2>
+      <p>
+        Brian Heder es un veterano del crimen que ha sobrevivido a generaciones
+        enteras de cambios en el negocio. Su experiencia lo convierte en una figura
+        respetada y temida, alguien que entiende que el poder no se muestra, se mantiene.
+      </p>
+    </div>
+  </div>
+<div class="video-block">
+  <video autoplay muted playsinline preload="auto">
+    <source src="/videos/Brian_Heder_Video_Clip.mp4" type="video/mp4" />
+  </video>
+</div>
+
+  <!-- Vice City -->
+  <div class="info-block">
+    <div class="info-img">
+      <img src={Jason3.src} />
+    </div>
+
+    <div class="info-text">
+      <h2>Vice City renace</h2>
+      <p>
+        Vice City vuelve con una identidad más compleja, donde cada zona tiene su
+        propia cultura, conflictos y dinámica social. La ciudad respira, cambia y
+        evoluciona constantemente, convirtiéndose en un escenario vivo que reacciona
+        a cada acción del jugador.
+      </p>
+    </div>
+  </div>
+<div class="video-block">
+  <video autoplay muted playsinline preload="auto">
+    <source src="/videos/Jason_Duval_Video_Clip.mp4" type="video/mp4" />
+  </video>
+</div>
+
+  <!-- Mundo -->
+  <div class="info-block reverse">
+    <div class="info-img">
+      <img src={Raul3.src} />
+    </div>
+
+    <div class="info-text">
+      <h2>Mundo sin límites</h2>
+      <p>
+        El mundo de GTA VI está diseñado para ofrecer libertad total sin sacrificar
+        realismo. Cada sistema, desde la inteligencia artificial hasta los eventos
+        dinámicos, contribuye a crear una experiencia donde cada partida se siente
+        distinta, orgánica y completamente inmersiva.
+      </p>
+    </div>
+  </div>
+<div class="video-block">
+  <video autoplay muted playsinline preload="auto">
+    <source src="/videos/Lucia_Caminos_Video_Clip.mp4" type="video/mp4" />
+  </video>
+</div>
+</section>
+
+<!-- juegos anteriores -->
+<section id="games">
+
+  <div class="games-header">
+    <h2>Entregas anteriores</h2>
+    <p>
+      La evolución de Grand Theft Auto ha marcado generaciones,
+      definiendo el estándar del mundo abierto.
+    </p>
+  </div>
+  <div class="games-row">
+  <div class="game-card">
+    <img src={GTA3.src} />
+    <div class="game-info">
+      <h3>GTA III</h3>
+      <span>2001</span>
+    </div>
+  </div>
+  <div class="game-card">
+    <img src={GTAVC.src} />
+    <div class="game-info">
+      <h3>Vice City</h3>
+      <span>2002</span>
+    </div>
+  </div>
+  <div class="game-card">
+    <img src={GTASA.src} />
+    <div class="game-info">
+      <h3>San Andreas</h3>
+      <span>2004</span>
+    </div>
+  </div>
+  <div class="game-card">
+    <img src={GTA4.src} />
+    <div class="game-info">
+      <h3>GTA IV</h3>
+      <span>2008</span>
+    </div>
+  </div>
+  <div class="game-card">
+    <img src={GTA5.src} />
+    <div class="game-info">
+      <h3>GTA V</h3>
+      <span>2013</span>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+  <footer class="legal-footer">
+  Página con fines educativos para evitar algún problema.
+</footer>
+</section>
+
+</main>
+</Layout>
+
+
+<script>
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*linea del tiempo animaciones*/
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "body",
+      start: "top top",
+      end: "+=1200",
+      scrub: 1
+    }
+  })
+
+  tl.to("#hero-key", { scale: 1 })
+    .to("#hero-key-logo", { opacity: 0 }, "<")
+    .to("#hero-footer", { opacity: 0 }, "<")
+    .to("#hero-play-button", { opacity: 0 }, "<")
+    .to("#logo-mask", { maskSize: "50vh" }, 0.2)
+    .to("#hero-key", { opacity: 0, duration: 0.3 }, 0.5)
+    .to("#full-logo", { opacity: 1, visibility: "visible" }, 0.6)
+    .to("#full-logo", { opacity: 0 }, 0.75)
+    .to("#logo-mask", { opacity: 0 }, 0.50)
+    .set("#logo-mask", { display: "none" })
+    .set("#full-logo", { display: "none" })
+    .to("main", { opacity: 1, y: 0 }, 0.9)
+
+
+/*imangenes e info*/
+  const blocks = gsap.utils.toArray(".info-block")
+
+  blocks.forEach((block, i) => {
+
+    const img = block.querySelector(".info-img")
+    if (!img) return
+    let x = 0
+    let y = 0
+    if (i % 4 === 0) x = -150
+    else if (i % 4 === 1) x = 150
+    else if (i % 4 === 2) y = 150
+    else y = -150
+    gsap.from(img, {
+      x,
+      y,
+      opacity: 0,
+      scale: 1.2,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: block,
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      }
+    })
+
+  })
+
+
+/*videos*/
+  gsap.utils.toArray(".video-block").forEach((block) => {
+    const video = block.querySelector("video")
+    if (!video) return
+    let hasPlayed = false
+    gsap.set(block, {
+      opacity: 0,
+      scale: 1.1
+    })
+    ScrollTrigger.create({
+      trigger: block,
+      start: "top 80%",
+      end: "bottom 20%",
+      onEnter: () => {
+        gsap.to(block, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out"
+        })
+        if (!hasPlayed) {
+          video.currentTime = 0
+          video.play()
+          hasPlayed = true
+        }
+      },
+      onLeave: () => {
+        video.pause()
+        gsap.to(block, {
+          opacity: 0,
+          scale: 0.95,
+          duration: 0.6,
+          ease: "power2.in"
+        })
+      },
+      onEnterBack: () => {
+        gsap.to(block, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          ease: "power2.out"
+        })
+      },
+      onLeaveBack: () => {
+        video.pause()
+
+        gsap.to(block, {
+          opacity: 0,
+          scale: 0.95,
+          duration: 0.6,
+          ease: "power2.in"
+        })
+      }
+    })
+  })
+
+/*hero starts*/
+  gsap.fromTo("#hero-stats",
+    { opacity: 0, y: 60 },
+    {
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: "#hero-stats",
+        start: "top 90%",
+        end: "top 50%",
+        scrub: true
+      }
+    }
+  )
+
+
+/*contador*/
+  const targetDate = new Date("2026-11-19T00:00:00").getTime()
+
+  function updateCountdown() {
+    const now = Date.now()
+    const distance = targetDate - now
+
+    if (distance <= 0) return
+    document.getElementById("days").textContent = Math.floor(distance / 86400000)
+    document.getElementById("hours").textContent = Math.floor((distance / 3600000) % 24)
+    document.getElementById("minutes").textContent = Math.floor((distance / 60000) % 60)
+    document.getElementById("seconds").textContent = Math.floor((distance / 1000) % 60)
+  }
+  updateCountdown()
+  setInterval(updateCountdown, 1000)
+
+
+/*musica*/
+  const audio = document.getElementById("musica")
+  const musicBtn = document.getElementById("btn-musica")
+  let isPlaying = false
+  if (audio && musicBtn) {
+    musicBtn.addEventListener("click", () => {
+      if (!isPlaying) {
+        audio.play()
+        musicBtn.textContent = "🔊"
+      } else {
+        audio.pause()
+        musicBtn.textContent = "🔇"
+      }
+      isPlaying = !isPlaying
+    })
+  }
+
+/*trailer en el modal*/
+  const modal = document.getElementById("videoModal")
+  const iframe = document.getElementById("videoFrame")
+  const btnTrailer = document.getElementById("btn-trailer")
+  if (btnTrailer) {
+    btnTrailer.addEventListener("click", () => {
+      openModal()
+    })
+  }
+  window.openModal = function () {
+    if (!modal || !iframe) return
+    modal.classList.remove("hidden")
+
+    iframe.src = "https://www.youtube.com/embed/QiIebY4wmWg?autoplay=1"
+  }
+  window.closeModal = function () {
+    if (!modal || !iframe) return
+    modal.classList.add("hidden")
+
+    iframe.src = ""
+  }
+  ScrollTrigger.refresh()
+})
+</script>
